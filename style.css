@@ -1,0 +1,349 @@
+/* =========================================================
+   Les Foulées de Nanterre — Feuille de style commune
+   ========================================================= */
+
+/* ---------- Variables ---------- */
+:root {
+  --primaire: #e4572e;      /* orange "dossard" */
+  --secondaire: #1d3557;    /* bleu nuit */
+  --clair: #f6f4ef;         /* fond crème */
+  --blanc: #ffffff;
+  --texte: #22262e;
+  --gris: #6b7280;
+  --rayon: 10px;
+  --ombre: 0 4px 14px rgba(29, 53, 87, 0.12);
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: var(--clair);
+  color: var(--texte);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primaire);
+}
+
+h1, h2, h3 {
+  color: var(--secondaire);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+p + p {
+  margin-top: 0.8rem;
+}
+
+/* ---------- En-tête & navigation ---------- */
+header {
+  background-color: var(--secondaire);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  color: var(--blanc);
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.logo span {
+  color: var(--primaire);
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.nav ul a {
+  color: var(--blanc);
+  text-decoration: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.nav ul a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Lien de la page en cours */
+.nav ul a.actif {
+  background-color: var(--primaire);
+}
+
+/* ---------- Bandeau (hero) ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--secondaire) 0%, #2b4c7e 60%, var(--primaire) 140%);
+  color: var(--blanc);
+  text-align: center;
+  padding: 4.5rem 1.5rem;
+}
+
+.hero h1 {
+  color: var(--blanc);
+  font-size: 2.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  opacity: 0.92;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--primaire);
+  color: var(--blanc);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Contenu principal ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+/* ---------- Grille de cartes ---------- */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.carte {
+  background-color: var(--blanc);
+  border-radius: var(--rayon);
+  padding: 1.5rem;
+  box-shadow: var(--ombre);
+  border-top: 4px solid var(--primaire);
+}
+
+.carte .icone {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Bloc mis en avant ---------- */
+.encadre {
+  background-color: var(--blanc);
+  border-left: 5px solid var(--primaire);
+  border-radius: var(--rayon);
+  padding: 1.5rem 1.8rem;
+  box-shadow: var(--ombre);
+}
+
+/* ---------- Chiffres clés ---------- */
+.chiffres {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+
+.chiffre {
+  background-color: var(--secondaire);
+  color: var(--blanc);
+  border-radius: var(--rayon);
+  padding: 1.4rem 1rem;
+}
+
+.chiffre strong {
+  display: block;
+  font-size: 2rem;
+  color: var(--primaire);
+}
+
+/* ---------- Listes ---------- */
+.liste {
+  list-style: none;
+}
+
+.liste li {
+  padding: 0.4rem 0 0.4rem 1.6rem;
+  position: relative;
+}
+
+.liste li::before {
+  content: "➜";
+  color: var(--primaire);
+  position: absolute;
+  left: 0;
+}
+
+/* ---------- Tableau des tarifs ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--blanc);
+  border-radius: var(--rayon);
+  overflow: hidden;
+  box-shadow: var(--ombre);
+}
+
+th, td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--secondaire);
+  color: var(--blanc);
+}
+
+tr:nth-child(even) td {
+  background-color: #f1f3f7;
+}
+
+/* ---------- Programme (frise chronologique) ---------- */
+.frise {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid var(--primaire);
+}
+
+.etape {
+  position: relative;
+  background-color: var(--blanc);
+  border-radius: var(--rayon);
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.2rem;
+  box-shadow: var(--ombre);
+}
+
+/* Pastille sur la ligne */
+.etape::before {
+  content: "";
+  position: absolute;
+  left: -2.65rem;
+  top: 1.2rem;
+  width: 18px;
+  height: 18px;
+  background-color: var(--blanc);
+  border: 4px solid var(--primaire);
+  border-radius: 50%;
+}
+
+.heure {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--primaire);
+  margin-bottom: 0.2rem;
+}
+
+.etape.forte {
+  background-color: var(--secondaire);
+  color: var(--blanc);
+}
+
+.etape.forte h3 {
+  color: var(--blanc);
+}
+
+/* ---------- Bouton ---------- */
+.bouton {
+  display: inline-block;
+  background-color: var(--primaire);
+  color: var(--blanc);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  margin-top: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bouton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(228, 87, 46, 0.4);
+}
+
+.centre {
+  text-align: center;
+}
+
+/* ---------- Pied de page ---------- */
+footer {
+  background-color: var(--secondaire);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1.8rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+footer p + p {
+  margin-top: 0.3rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+  .nav {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 3rem 1.2rem;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  th, td {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}
